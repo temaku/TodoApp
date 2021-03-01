@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:TodoApp/data_provider/todo_data_provider.dart';
 import 'package:meta/meta.dart';
 import '../model/todo.dart';
@@ -10,7 +8,7 @@ class TodoRepository {
   TodoRepository({@required this.dataProvider}) :assert(dataProvider != null);
 
   Future<Todo> createTodo(Todo todo) async {
-    return await dataProvider.createCourse(todo);
+    return await dataProvider.createTodo(todo);
   }
 
   Future<List<Todo>> getTodos() async {
@@ -18,11 +16,11 @@ class TodoRepository {
   }
 
   Future<void> updateTodo(Todo todo) async {
-    return await dataProvider.updateTodos();
+    return await dataProvider.updateTodos(todo);
   }
 
-  Future<void> deleteTodo(String id) {
-    return await dataProvider.deleteTodo(id);
+  Future<void> deleteTodo(String id) async {
+    return await dataProvider.deleteTodos(id);
   }
 
 }
