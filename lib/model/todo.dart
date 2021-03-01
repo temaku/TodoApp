@@ -20,7 +20,7 @@ class  Todo extends Equatable {
   List<Object> get props => [id, title, description, dateCreated,done];
 
   factory Todo.fromJson(Map<String, dynamic> json) {
-    return Course(
+    return Todo(
       id: json['id'],
       title: json['title'],
       description: json['description'],
